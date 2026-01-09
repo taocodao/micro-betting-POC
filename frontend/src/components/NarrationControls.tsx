@@ -64,7 +64,7 @@ interface NarrationControlsProps {
 
 export function NarrationControls({
     currentPhase,
-    isPlaying,
+    isPlaying: _isPlaying,
     onPhaseSelect,
     onPlayPause,
 }: NarrationControlsProps) {

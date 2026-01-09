@@ -33,7 +33,7 @@ function App() {
         setSelectedOdds(odds);
     }, []);
 
-    const handlePlaceBet = useCallback(async (amount: number) => {
+    const handlePlaceBet = useCallback(async (_amount: number) => {
         // Simulate API call with latency
         const clientTime = Date.now();
 
