@@ -1,0 +1,154 @@
+.narration-controls {
+    padding: 8px 12px;
+    background: rgba(99, 102, 241, 0.1);
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.narration-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.narration-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.play-pause-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.play-pause-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+}
+
+.play-pause-btn.playing {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.play-pause-btn.playing:hover {
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+.phases-list {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.phases-list::-webkit-scrollbar {
+    height: 4px;
+}
+
+.phases-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.phases-list::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.5);
+    border-radius: 2px;
+}
+
+.phase-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 6px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 9px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 50px;
+}
+
+.phase-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.phase-btn.active {
+    background: rgba(99, 102, 241, 0.3);
+    border-color: #6366f1;
+    color: white;
+}
+
+.phase-btn.completed {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.phase-number {
+    font-size: 12px;
+    font-weight: 700;
+    color: inherit;
+}
+
+.phase-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 45px;
+}
+
+/* Speaking indicator */
+.speaking-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: rgba(34, 197, 94, 0.15);
+    border-radius: 6px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.speaking-wave {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.speaking-text {
+    font-size: 11px;
+    color: #22c55e;
+}

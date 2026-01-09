@@ -1,0 +1,95 @@
+{
+    "app": {
+        "title": "Demo de Micro-Apostas",
+        "subtitle": "Sistema de Pagamento Híbrido X402 + ERC-8004"
+    },
+    "nav": {
+        "home": "Início",
+        "events": "Eventos",
+        "history": "Histórico",
+        "metrics": "Métricas"
+    },
+    "video": {
+        "latency": "Latência",
+        "frameHash": "Hash do Frame",
+        "liveIndicator": "AO VIVO",
+        "lowLatencyNote": "Streaming abaixo de 500ms via Caton C3"
+    },
+    "market": {
+        "title": "Mercados ao Vivo",
+        "placebet": "Fazer Aposta",
+        "odds": "Odds",
+        "status": {
+            "open": "Aberto",
+            "closed": "Fechado",
+            "settled": "Liquidado"
+        },
+        "types": {
+            "next_goal": "Próximo Gol",
+            "next_corner": "Próximo Escanteio",
+            "next_foul": "Próxima Falta",
+            "win": "Vencedor"
+        }
+    },
+    "bet": {
+        "title": "Faça Sua Aposta",
+        "amount": "Valor",
+        "potentialReturn": "Retorno Potencial",
+        "submit": "Confirmar Aposta",
+        "accepted": "Aposta Aceita",
+        "rejected": "Aposta Rejeitada",
+        "latencyLabel": "Latência",
+        "traceId": "ID de Rastreio X402",
+        "frameHashLabel": "Hash do Frame de Vídeo"
+    },
+    "dispute": {
+        "title": "Contestar Aposta",
+        "reason": "Motivo",
+        "submit": "Enviar Contestação",
+        "verdict": "Veredito TEE",
+        "correct": "CORRETO - Decisão do operador foi válida",
+        "incorrect": "INCORRETO - Aposta deveria ter sido aceita",
+        "attestation": "Hash de Atestação",
+        "explanation": "Explicação"
+    },
+    "metrics": {
+        "title": "Métricas do Operador",
+        "totalBets": "Total de Apostas",
+        "acceptanceRate": "Taxa de Aceitação",
+        "avgLatency": "Latência Média",
+        "maxLatency": "Latência Máxima",
+        "totalHandle": "Volume Total",
+        "disputes": "Disputas"
+    },
+    "narration": {
+        "title": "Guia de Voz",
+        "play": "Iniciar",
+        "pause": "Parar",
+        "phases": {
+            "intro": "Intro",
+            "video": "Vídeo",
+            "x402": "X402",
+            "brazil": "Brasil",
+            "dispute": "Disputa",
+            "blockchain": "Chain",
+            "compliance": "Comply",
+            "architecture": "Arq",
+            "closing": "Fim"
+        }
+    },
+    "auth": {
+        "login": "Entrar",
+        "register": "Cadastrar",
+        "email": "E-mail",
+        "password": "Senha",
+        "logout": "Sair",
+        "balance": "Saldo"
+    },
+    "common": {
+        "loading": "Carregando...",
+        "error": "Erro",
+        "success": "Sucesso",
+        "cancel": "Cancelar",
+        "close": "Fechar"
+    }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X402 + ERC-8004 Micro-Betting PoC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Micro-Betting PoC</span>
+      </div>
+      <div class="header-right">
+        <div id="user-info" class="user-info hidden">
+          <span id="user-balance" class="balance">R$ 0.00</span>
+          <span id="user-email" class="email"></span>
+          <button id="logout-btn" class="btn btn-sm btn-outline">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Auth Panel (shown when not logged in) -->
+      <div id="auth-panel" class="panel auth-panel">
+        <h2>Welcome to Micro-Betting PoC</h2>
+        <p class="subtitle">X402 Payment Protocol + ERC-8004 Trust Layer</p>
+        
+        <div class="tabs">
+          <button class="tab active" data-tab="login">Login</button>
+          <button class="tab" data-tab="register">Register</button>
+        </div>
+
+        <form id="login-form" class="form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+
+        <form id="register-form" class="form hidden">
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+        </form>
+      </div>
+
+      <!-- Dashboard (shown when logged in) -->
+      <div id="dashboard" class="dashboard hidden">
+        <!-- Left Panel: Events & Video -->
+        <div class="panel events-panel">
+          <h3>Live Events</h3>
+          <div id="events-list" class="events-list">
+            <p class="loading">Loading events...</p>
+          </div>
+          <button id="create-event-btn" class="btn btn-primary btn-full">Create Test Event</button>
+        </div>
+
+        <!-- Center Panel: Betting -->
+        <div class="panel betting-panel">
+          <div id="video-container" class="video-container hidden">
+            <video id="video-player" controls autoplay muted></video>
+          </div>
+          
+          <div id="markets-container" class="markets-container">
+            <h3>Markets</h3>
+            <div id="markets-list" class="markets-list">
+              <p class="empty">Select an event to view markets</p>
+            </div>
+          </div>
+
+          <div id="betting-form-container" class="betting-form hidden">
+            <h4>Place Bet</h4>
+            <div class="bet-info">
+              <span id="selected-market-type"></span>
+              <span id="selected-odds" class="odds"></span>
+            </div>
+            <div class="form-group">
+              <label for="bet-amount">Amount (BRL)</label>
+              <input type="number" id="bet-amount" min="1" max="100" value="10" step="1">
+            </div>
+            <div class="potential-return">
+              Potential Return: <span id="potential-return">R$ 0.00</span>
+            </div>
+            <button id="place-bet-btn" class="btn btn-primary btn-full">Place Bet</button>
+          </div>
+        </div>
+
+        <!-- Right Panel: History & Metrics -->
+        <div class="panel history-panel">
+          <div class="panel-tabs">
+            <button class="panel-tab active" data-panel="bets">My Bets</button>
+            <button class="panel-tab" data-panel="traces">Traces</button>
+            <button class="panel-tab" data-panel="metrics">Metrics</button>
+          </div>
+
+          <div id="bets-panel" class="panel-content">
+            <div id="bets-list" class="bets-list">
+              <p class="empty">No bets yet</p>
+            </div>
+          </div>
+
+          <div id="traces-panel" class="panel-content hidden">
+            <div id="traces-list" class="traces-list">
+              <p class="empty">No payment traces</p>
+            </div>
+          </div>
+
+          <div id="metrics-panel" class="panel-content hidden">
+            <div id="metrics-display" class="metrics-display">
+              <div class="metric">
+                <span class="metric-label">Total Bets</span>
+                <span id="metric-total-bets" class="metric-value">0</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Acceptance Rate</span>
+                <span id="metric-acceptance-rate" class="metric-value">0%</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Avg Latency</span>
+                <span id="metric-avg-latency" class="metric-value">0ms</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Total Handle</span>
+                <span id="metric-handle" class="metric-value">R$ 0</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Disputes</span>
+                <span id="metric-disputes" class="metric-value">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Dispute Modal -->
+    <div id="dispute-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Dispute Bet</h3>
+        <p id="dispute-bet-info"></p>
+        <div class="form-group">
+          <label for="dispute-reason">Reason</label>
+          <textarea id="dispute-reason" placeholder="Explain why you're disputing this bet..."></textarea>
+        </div>
+        <div id="dispute-result" class="dispute-result hidden">
+          <h4>TEE Verdict</h4>
+          <div id="dispute-verdict"></div>
+          <div id="dispute-details"></div>
+          <div id="dispute-attestation" class="attestation"></div>
+        </div>
+        <div class="modal-actions">
+          <button id="submit-dispute-btn" class="btn btn-primary">Submit Dispute</button>
+          <button id="close-dispute-modal" class="btn btn-outline">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{
+    "app": {
+        "title": "Micro-Betting Demo",
+        "subtitle": "X402 + ERC-8004 Hybrid Payment System"
+    },
+    "nav": {
+        "home": "Home",
+        "events": "Events",
+        "history": "History",
+        "metrics": "Metrics"
+    },
+    "video": {
+        "latency": "Latency",
+        "frameHash": "Frame Hash",
+        "liveIndicator": "LIVE",
+        "lowLatencyNote": "Sub-500ms streaming via Caton C3"
+    },
+    "market": {
+        "title": "Live Markets",
+        "placebet": "Place Bet",
+        "odds": "Odds",
+        "status": {
+            "open": "Open",
+            "closed": "Closed",
+            "settled": "Settled"
+        },
+        "types": {
+            "next_goal": "Next Goal",
+            "next_corner": "Next Corner",
+            "next_foul": "Next Foul",
+            "win": "Winner"
+        }
+    },
+    "bet": {
+        "title": "Place Your Bet",
+        "amount": "Amount",
+        "potentialReturn": "Potential Return",
+        "submit": "Confirm Bet",
+        "accepted": "Bet Accepted",
+        "rejected": "Bet Rejected",
+        "latencyLabel": "Latency",
+        "traceId": "X402 Trace ID",
+        "frameHashLabel": "Video Frame Hash"
+    },
+    "dispute": {
+        "title": "Dispute Bet",
+        "reason": "Reason",
+        "submit": "Submit Dispute",
+        "verdict": "TEE Verdict",
+        "correct": "CORRECT - Operator decision was valid",
+        "incorrect": "INCORRECT - Bet should have been accepted",
+        "attestation": "Attestation Hash",
+        "explanation": "Explanation"
+    },
+    "metrics": {
+        "title": "Operator Metrics",
+        "totalBets": "Total Bets",
+        "acceptanceRate": "Acceptance Rate",
+        "avgLatency": "Avg Latency",
+        "maxLatency": "Max Latency",
+        "totalHandle": "Total Handle",
+        "disputes": "Disputes"
+    },
+    "narration": {
+        "title": "Voice Guide",
+        "play": "Play",
+        "pause": "Stop",
+        "phases": {
+            "intro": "Intro",
+            "video": "Video",
+            "x402": "X402",
+            "brazil": "Brazil",
+            "dispute": "Dispute",
+            "blockchain": "Chain",
+            "compliance": "Comply",
+            "architecture": "Arch",
+            "closing": "Close"
+        }
+    },
+    "auth": {
+        "login": "Login",
+        "register": "Register",
+        "email": "Email",
+        "password": "Password",
+        "logout": "Logout",
+        "balance": "Balance"
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success",
+        "cancel": "Cancel",
+        "close": "Close"
+    }
+}

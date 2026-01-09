@@ -1,0 +1,95 @@
+{
+    "app": {
+        "title": "微型投注演示",
+        "subtitle": "X402 + ERC-8004 混合支付系统"
+    },
+    "nav": {
+        "home": "首页",
+        "events": "赛事",
+        "history": "历史",
+        "metrics": "指标"
+    },
+    "video": {
+        "latency": "延迟",
+        "frameHash": "帧哈希",
+        "liveIndicator": "直播中",
+        "lowLatencyNote": "通过Caton C3实现低于500毫秒的流媒体"
+    },
+    "market": {
+        "title": "实时市场",
+        "placebet": "下注",
+        "odds": "赔率",
+        "status": {
+            "open": "开放",
+            "closed": "已关闭",
+            "settled": "已结算"
+        },
+        "types": {
+            "next_goal": "下一个进球",
+            "next_corner": "下一个角球",
+            "next_foul": "下一个犯规",
+            "win": "获胜者"
+        }
+    },
+    "bet": {
+        "title": "下注",
+        "amount": "金额",
+        "potentialReturn": "潜在回报",
+        "submit": "确认下注",
+        "accepted": "投注已接受",
+        "rejected": "投注被拒绝",
+        "latencyLabel": "延迟",
+        "traceId": "X402 追踪ID",
+        "frameHashLabel": "视频帧哈希"
+    },
+    "dispute": {
+        "title": "争议投注",
+        "reason": "原因",
+        "submit": "提交争议",
+        "verdict": "TEE裁决",
+        "correct": "正确 - 运营商决定有效",
+        "incorrect": "错误 - 投注应该被接受",
+        "attestation": "证明哈希",
+        "explanation": "说明"
+    },
+    "metrics": {
+        "title": "运营商指标",
+        "totalBets": "总投注数",
+        "acceptanceRate": "接受率",
+        "avgLatency": "平均延迟",
+        "maxLatency": "最大延迟",
+        "totalHandle": "总交易额",
+        "disputes": "争议数"
+    },
+    "narration": {
+        "title": "语音导览",
+        "play": "播放",
+        "pause": "停止",
+        "phases": {
+            "intro": "介绍",
+            "video": "视频",
+            "x402": "X402",
+            "brazil": "巴西",
+            "dispute": "争议",
+            "blockchain": "区块链",
+            "compliance": "合规",
+            "architecture": "架构",
+            "closing": "结束"
+        }
+    },
+    "auth": {
+        "login": "登录",
+        "register": "注册",
+        "email": "邮箱",
+        "password": "密码",
+        "logout": "退出",
+        "balance": "余额"
+    },
+    "common": {
+        "loading": "加载中...",
+        "error": "错误",
+        "success": "成功",
+        "cancel": "取消",
+        "close": "关闭"
+    }
+}

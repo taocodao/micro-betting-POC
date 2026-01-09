@@ -1,0 +1,173 @@
+.betting-ui {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.betting-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.amount-section {
+    margin-bottom: 12px;
+}
+
+.amount-label {
+    display: block;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.amount-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.amount-btn {
+    flex: 1;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.amount-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.amount-btn.selected {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-color: transparent;
+}
+
+.bet-details {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 4px 0;
+}
+
+.odds-value {
+    color: #818cf8;
+    font-weight: 600;
+}
+
+.return-value {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.place-bet-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.place-bet-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+}
+
+.place-bet-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Result Display */
+.bet-result {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bet-result.accepted {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.bet-result.rejected {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.result-header {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.bet-result.accepted .result-header {
+    color: #22c55e;
+}
+
+.bet-result.rejected .result-header {
+    color: #ef4444;
+}
+
+.result-details {
+    font-size: 12px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.latency.good {
+    color: #22c55e;
+}
+
+.latency.warn {
+    color: #f59e0b;
+}
+
+.trace-id,
+.frame-hash {
+    font-family: monospace;
+    color: #818cf8;
+}
+
+.result-reason {
+    margin-top: 6px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,92 @@
+.markets-panel {
+    padding: 12px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.markets-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+}
+
+.markets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.market-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.market-card:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+.market-card.selected {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: #6366f1;
+}
+
+.market-card:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.market-horse {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.horse-emoji {
+    font-size: 20px;
+}
+
+.market-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.market-type {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    text-transform: capitalize;
+}
+
+.market-status {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.status-open {
+    color: #22c55e;
+}
+
+.status-closed {
+    color: #ef4444;
+}
+
+.status-settled {
+    color: #f59e0b;
+}
+
+.market-odds {
+    font-size: 20px;
+    font-weight: 700;
+    color: #818cf8;
+}
