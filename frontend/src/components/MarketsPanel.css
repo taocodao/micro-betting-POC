@@ -9,6 +9,16 @@
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 10px;
+    transition: color 0.2s;
+}
+
+.markets-title.clickable {
+    cursor: pointer;
+}
+
+.markets-title.clickable:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
 }
 
 .markets-list {

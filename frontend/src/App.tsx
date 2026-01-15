@@ -66,6 +66,7 @@ function App() {
                             markets={horseMarkets}
                             selectedMarket={selectedMarket}
                             onSelectMarket={handleSelectMarket}
+                            onHeaderClick={() => setSelectedMarket(null)}
                         />
                         {selectedMarket && (
                             <BettingUI

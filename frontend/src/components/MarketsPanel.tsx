@@ -13,17 +13,23 @@ interface MarketsPanelProps {
     markets: Market[];
     selectedMarket: string | null;
     onSelectMarket: (marketId: string, odds: number) => void;
+    onHeaderClick?: () => void;
 }
 
 // Horse racing specific market display
 const horseEmojis = ['🏇', '🐎', '🏆', '🎯', '⚡'];
 
-export function MarketsPanel({ markets, selectedMarket, onSelectMarket }: MarketsPanelProps) {
+export function MarketsPanel({ markets, selectedMarket, onSelectMarket, onHeaderClick }: MarketsPanelProps) {
     const { t } = useTranslation();
 
     return (
         <div className="markets-panel">
-            <h3 className="markets-title">🏇 {t('market.title')}</h3>
+            <h3
+                className={`markets-title ${onHeaderClick ? 'clickable' : ''}`}
+                onClick={onHeaderClick}
+            >
+                🏇 {t('market.title')}
+            </h3>
 
             <div className="markets-list">
                 {markets.map((market, index) => (
