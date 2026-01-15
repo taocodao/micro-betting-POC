@@ -171,3 +171,21 @@
     font-size: 11px;
     color: rgba(255, 255, 255, 0.5);
 }
+
+.place-another-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.place-another-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}

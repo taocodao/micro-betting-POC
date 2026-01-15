@@ -6,6 +6,7 @@ interface BettingUIProps {
     marketId: string | null;
     odds: number;
     onPlaceBet: (amount: number) => Promise<BetResult>;
+    onPlaceAnotherBet?: () => void;
 }
 
 interface BetResult {
@@ -16,7 +17,7 @@ interface BetResult {
     reason?: string;
 }
 
-export function BettingUI({ marketId, odds, onPlaceBet }: BettingUIProps) {
+export function BettingUI({ marketId, odds, onPlaceBet, onPlaceAnotherBet }: BettingUIProps) {
     const { t } = useTranslation();
     const [amount, setAmount] = useState(10);
     const [isPlacing, setIsPlacing] = useState(false);
@@ -61,6 +62,7 @@ export function BettingUI({ marketId, odds, onPlaceBet }: BettingUIProps) {
                             key={val}
                             className={`amount-btn ${amount === val ? 'selected' : ''}`}
                             onClick={() => setAmount(val)}
+                            disabled={!!result}
                         >
                             ${val}
                         </button>
@@ -81,13 +83,15 @@ export function BettingUI({ marketId, odds, onPlaceBet }: BettingUIProps) {
             </div>
 
             {/* Submit Button */}
-            <button
-                className="place-bet-btn"
-                onClick={handlePlaceBet}
-                disabled={isPlacing}
-            >
-                {isPlacing ? t('common.loading') : t('bet.submit')}
-            </button>
+            {!result && (
+                <button
+                    className="place-bet-btn"
+                    onClick={handlePlaceBet}
+                    disabled={isPlacing}
+                >
+                    {isPlacing ? t('common.loading') : t('bet.submit')}
+                </button>
+            )}
 
             {/* Result Display */}
             {result && (
@@ -124,6 +128,18 @@ export function BettingUI({ marketId, odds, onPlaceBet }: BettingUIProps) {
                             <div className="result-reason">{result.reason}</div>
                         )}
                     </div>
+
+                    {onPlaceAnotherBet && (
+                        <button
+                            className="place-another-btn"
+                            onClick={() => {
+                                setResult(null);
+                                onPlaceAnotherBet();
+                            }}
+                        >
+                            {t('bet.placeAnother', 'Place Another Bet')}
+                        </button>
+                    )}
                 </div>
             )}
         </div>
